@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  turismaya_db:
+    image: postgres
+    container_name: turismaya_db
+    restart: always
+    environment:
+      POSTGRES_USER: uturismaya
+      POSTGRES_PASSWORD: TUR1SM4Y4$2024
+      POSTGRES_DB: turismayadb
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 5432:5432
